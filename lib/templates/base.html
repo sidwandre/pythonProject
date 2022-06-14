@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'base.css' %}>
+    {% block head %}{% endblock head %}
+</head>
+<body>
+    <div class="nav" >
+        <ul>             
+            <a href={% url 'home' %}><li>Home</li></a>
+            <a href={% url 'add' %}><li>Add Book</li></a>
+            <a href={% url 'view' %}><li>View Book</li></a>
+            <a href={% url 'search' %}><li>Search Book</li></a>
+            <a href={% url 'del' %}><li>Delete Book</li></a>
+        </ul>
+    </div>
+    {% block body %} {% endblock body %}
+</body>
+</html>

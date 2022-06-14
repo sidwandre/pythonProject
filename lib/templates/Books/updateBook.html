@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <style>
+        .updt{
+            margin-left:40%;
+        }
+        #id{
+            margin: 20px;
+        }
+        #submit{            
+            background-color: rgb(21, 207, 21); 
+        }
+    </style>
+{% endblock head %}
+
+{% block body %}
+{% csrf_token %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="updt">
+        <h2>Update Book :</h2>
+        <label>
+            Title :
+            <input type="text" name="title" id="id" value={{ book.title }}>
+        </label><br>
+        <label>
+            Author :
+            <input type="text" name="author" id="id" value={{ book.author }}>
+        </label><br>
+        <label>
+            Publisher :
+            <input type="text" name="publisher" id="id" value={{ book.publisher }}>
+        </label><br>
+        <label>
+            Language :
+            <input type="text" name=language id="id" value={{ book.language }}>
+        </label><br>
+        <label>
+            Copies :
+            <input type="text" name=copies id="id" value={{ book.copies }}>
+        </label><br><br>
+        <input type="submit" name="submit" id="submit" value="UPDATE">
+    </form>
+</div>
+
+{% endblock body %}

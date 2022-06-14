@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <style>
+        pre,h1{
+            margin : 40px;
+            font-size: 20px;
+        }
+        h1{
+            font-size: 25px;
+        }
+    </style>
+{% endblock head %}
+
+{% block body %}
+{% csrf_token %}
+
+<!-- serach -->
+<form method="POST">
+    {% csrf_token %}
+    <label>
+        Enter Book ID :
+        <input type="int" name="bid">
+    </label>
+    <input type="submit" name="submit" value="Serch">
+</form>
+
+
+<!-- result -->
+{% if book %}
+<h1>{{book.title}}</h1>
+<pre>
+Title       : {{book.title}} 
+Author      : {{book.author}} 
+Publisher   : {{book.publisher}} 
+Language    : {{book.language}} 
+Copies      : {{book.copies}} 
+</pre>
+{% endif %}
+
+
+{% endblock body %}

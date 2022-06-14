@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <style>
+        table{
+            margin:10px;
+            font-size: 18px;
+            width:80%
+        }
+    </style>
+
+{% endblock head %}
+
+{% block body %}
+{% csrf_token %}
+
+    <table cellspacing="0" border="1px">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Language</th>
+                <th>Copies</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.publisher}}</td>
+                <td>{{book.language}}</td>
+                <td>{{book.copies}}</td>
+            </tr>
+                
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+{% endblock body %}

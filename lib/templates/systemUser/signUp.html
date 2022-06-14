@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href={% static 'signUp.css' %}>
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h2><b>SIGN UP : </b></h2>
+        <div class="user">
+        <label>
+            First Name:
+            <input type="text" name="fname" id="sign" required>
+        </label><br>
+        <label>
+            Last Name:
+            <input type="text" name="lname" id="sign" required>
+        </label><br>
+        <label>
+            Email:
+            <input type="email" name="email" id="sign" required>
+        </label><br>
+        <label>
+            Username:
+            <input type="text" name="username" id="sign" required>
+        </label><br>
+        <label>
+            Passward:
+            <input type="password" name="pwd" id="sign" required>
+        </label><br>
+        <label>
+            Passward Again:
+            <input type="password" name="pwd2" id="sign" required>
+        </label><br>
+        <input type="submit" name="submit" id="submit">
+    </div>
+    </form>
+</body>
+
+</html>
